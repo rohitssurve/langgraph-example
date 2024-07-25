@@ -42,7 +42,7 @@ def should_continue(state):
 # Define the function that calls the model
 def call_model(state, config):
     messages = state["messages"]
-    model_name = config.get('configurable', {}).get("model_name", "anthropic")
+    model_name = config.get('configurable', {}).get("model_name", "openai")
     model = _get_model(model_name)
     response = model.invoke(messages)
     # We return a list, because this will get added to the existing list
